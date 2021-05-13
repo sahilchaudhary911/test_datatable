@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../static/css/jquery.dataTables.min.css">
+
+</head>
+<body>
+
+<div>
+    <table id="trust">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Designation</th>
+          <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in data %}
+           <tr>
+             <td>{{x.emp_id.id}}</td>
+             <td>{{x.emp_id.name}}</td>
+             <td>{{x.emp_id.address}}</td>
+             <td>{{x.emp_id.phone}}</td>
+             <td>{{x.emp_id.designation}}</td>
+             <td>{{x.salary}}</td>
+           </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+
+
+
+<script rel="stylesheet" src="../static/js/jquery.dataTables.min.js"></script>
+
+<script>
+document.getElementById("trust").DataTable();
+</script>
+
+</body>
+</html>
